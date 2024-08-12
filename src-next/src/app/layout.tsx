@@ -24,13 +24,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         {/* <WindowTitleBar/> */}
-        {/* <TopNav /> */}
         <Theme appearance="light">
           <TopNav />
           <main className=" absolute w-full top-[60px]" >
             {children}
           </main>
-          <Footbar/>
         </Theme>
       </body>
     </html>

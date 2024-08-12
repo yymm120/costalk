@@ -9,6 +9,8 @@
     "lint": "next lint && biome check src"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.51.23",
+    "@tanstack/react-query-devtools": "^5.51.23",
     "@radix-ui/react-progress": "^1.1.0",
     "@radix-ui/themes": "^3.1.1",
     "@tauri-apps/api": "^1.6.0",

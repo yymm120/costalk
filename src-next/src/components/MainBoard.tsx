@@ -38,7 +38,7 @@ export default function MainBoard({ type }: { type: string }) {
                                         preload='metadata'
                                         autoPlay={true}
                                         muted
-                                        className=" rounded-xl object-cover mx-auto max-h-[624px] shrink-0"
+                                        className="rounded-xl object-cover mx-auto max-h-[624px] shrink-0"
                                         src={url}
                                     />
                                     <img
@@ -47,7 +47,7 @@ export default function MainBoard({ type }: { type: string }) {
                                         src=""
                                     />
                                 </div>
-                                <div className="relative left-1 flex flex-col justify-end gap-2">
+                                <div className="relative shrink-0 left-1 flex flex-col justify-end gap-2">
                                     {
                                         [...Array(3)].map(() =>
                                             <div key={uuidv4()} className='flex flex-col items-center'>

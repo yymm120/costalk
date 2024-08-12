@@ -15,7 +15,7 @@ impl UserService {
         Application { database_state, .. }: Application,
     ) -> Result<Vec<User>> {
         let users = sqlx::query_as::<_, User>(
-            r#"SELECT id, username, occupation, email, phone FROM "user""#,
+            r#"SELECT id, username, occupation, phone, email FROM "users""#,
         )
         .fetch_all(&database_state.model.db_pool)
         .await?;

@@ -4,7 +4,7 @@ import './styles.css';
 import CircleProgress from '@/components/progress/CircleProgress';
 import { useThemeContext } from '@radix-ui/themes';
 import { LandingPagePropsType } from '@/types';
-import DaoButton from '@/components/daobutton/DaoButton';
+import DaoButton from '@/components/button/DaoButton';
 import TableBoard from '@/components/TableBoard';
 import MainBoard from '@/components/MainBoard';
 
@@ -15,87 +15,20 @@ export default function Home() {
     const whellHandler = () => {
         setLandingShow(true);
     }
-
   return (
     <>
-      {/* {landingShow? <LandingPage setLandingShow={setLandingShow}/>: <>aaaa</>} */}
-      {/* <LandingPage setLandingShow={setLandingShow}/> */}
       <div className="flex gap-[6%] justify-center w-full h-[calc(100vh-90px)]">
         <div className="flex row-col basis-1/6">
             <TableBoard type="assign_to_me"/>
         </div>
         <div className="flex row-col basis-2/6">
             <MainBoard type='news' />
-            {/* <MainBoard type='works' /> */}
         </div>
         <div className="flex row-col basis-1/6">
             <TableBoard type="publish_to_world" />
         </div>
-
       </div>
-      {/* 我发誓: 我要坚持1个星期每天做10个俯卧撑。如果未能完成, 我将购买一我最讨厌的颜色(红色)的衣服。
-      回答: 请在1分钟内选择1件你最讨厌的衣服。
-      回答: 选择完毕, 倒计时1个星期开始计时, 距离今天结束还有8小时, 请按规定时间上传视频。
-
-      我发誓: 我要在一个月内瘦10斤, 如果我未能完成, 我会捐款100元给需要的人。
-      回答: 请选择一家孤儿院或者救助中心。
-      回答: 选择完毕, 请支付100元, 当你完成挑战, 100元会立即返回, 挑战失败, 它们将会发送给你选择的机构。
-      回答: 请输入你当前体重。
-      回答: 输入完毕, 1个月倒计时开始及时, 距离挑战结束还有30天
-
-      我发誓: 我今天要给心爱的女孩表白, 如果我没有勇气去做, 我会捐款1000元给孤儿院。
-      回答: 请选择一家孤儿院或者救助中心。
-      回答: 选择完毕, 倒计时开始, 距离今天结束还有30分钟, 请按规定时间上传视频。
-
-      我发誓: 我今天要直播奔跑10公里, 如果我没做到, 我要在直播间发10个1000元的红包。
-      回答: 请创建10个1000元的红包。然后创建直播间。
-      
-      我发誓: 我要直播一口气做100个俯卧撑, 如果我没有做到, 我要在直播间发100个10元的红包。
-      我发誓: 我要直播挑战一口一只猪, 如果失败, 我将在直播间发10个100元的红包。
-      我发誓: 我要在7天内背100个单词, 如果失败, 我将为The Dao贡献100元。 */}
-      
-      {/* <DaoButton /> */}
-
-      {/* <div style={{height: '200vh', background: 'black'}}>hello</div> */}
-
-
-{/* <MyComponent/> */}
     </>
-  );
-}
-
-function MyComponent() {
-  const [isBottom, setIsBottom] = useState(false);
-
-  useEffect(() => {
-    const scrollContainer = document.querySelector('.scroll-container');
-    if (!scrollContainer) return;
-
-    const handleScroll = () => {
-      const scrollTop = scrollContainer.scrollTop;
-      const scrollHeight = scrollContainer.scrollHeight;
-      const clientHeight = scrollContainer.clientHeight;
-
-      if (scrollTop + clientHeight >= scrollHeight - 10) {
-        setIsBottom(true);
-      } else {
-        setIsBottom(false);
-      }
-    };
-
-    scrollContainer.addEventListener('scroll', handleScroll);
-
-    return () => {
-      scrollContainer.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-  return (
-    <div className="scroll-container" style={{ height: '100vh', overflowY: 'auto' }}>
-      <div style={{ height: '200vh' }}>
-        {isBottom ? <p>已经滚动到底部</p> : <p>还没有滚动到底部</p>}
-      </div>
-    </div>
   );
 }
 
@@ -104,7 +37,6 @@ export function LandingPage({setLandingShow}: LandingPagePropsType) {
     const themeContext = useThemeContext();
     
     function whellHandler() {
-      console.log("ssssssssssss")
       setLandingShow(false);
     }
     

@@ -4,4 +4,4 @@ lto = true
 
 [workspace]
 resolver = "2"
-members = ["src-axum", "src-tauri"]
+members = ["src-axum"]
