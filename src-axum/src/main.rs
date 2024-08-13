@@ -9,12 +9,16 @@ mod startup;
 use crate::handler::user_handler::{
     create_user, delete_user, get_user_by_id, list_users, update_user,
 };
+use crate::handler::video_handler::{
+    list_video
+};
 use axum::{
     routing::{delete, get, post, put},
     Extension, Router, http::Method
 };
 use configuration::get_configuration;
 use service::user_service::UserService;
+use service::video_service::VideoService;
 use startup::Application;
 use tracing::info;
 use tracing_subscriber::EnvFilter;
@@ -46,16 +50,19 @@ pub async fn run(application: Application) {
     // allow requests from any origin
     .allow_origin(Any);
 
-    let service = UserService::new().await.unwrap();
+    let user_service = UserService::new().await.unwrap();
+    let video_service = VideoService::new().await.unwrap();
     let app = Router::new()
         .route("/", get(list_users))
-        .route("/users", get(list_users))
-        .route("/user/:id", get(get_user_by_id))
-        .route("/user", post(create_user))
-        .route("/user/:id", put(update_user))
-        .route("/user/:id", delete(delete_user))
+        // .route("/users", get(list_users))
+        // .route("/user/:id", get(get_user_by_id))
+        // .route("/user", post(create_user))
+        // .route("/user/:id", put(update_user))
+        // .route("/user/:id", delete(delete_user))
+        .route("/videos/:page", get(list_video))
         .layer(cors)
-        .layer(Extension(service))
+        .layer(Extension(user_service))
+        .layer(Extension(video_service))
         .with_state(application.clone());
 
     let listenner = tokio::net::TcpListener::bind(application.address)

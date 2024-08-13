@@ -119,3 +119,12 @@ VALUES
   ('Chiquita Curry','1-687-888-3111','luctus.curabitur@aol.net'),
   ('Nasim Hicks','(426) 529-8687','justo@aol.org'),
   ('Keith Bright','(243) 233-7375','dapibus@hotmail.com');
+
+
+INSERT INTO video (url,name,description) 
+VALUES
+  ('/video/1', 'video-1', 'video-1'),
+  ('/video/2', 'video-2', 'video-2'),
+  ('/video/3', 'video-3', 'video-3'),
+  ('/video/4', 'video-4', 'video-4'),
+  ('/video/5', 'video-5', 'video-5');

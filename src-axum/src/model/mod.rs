@@ -1,5 +1,6 @@
 mod error;
 pub mod user;
+pub mod video;
 
 use crate::configuration::DatabaseSettings;
 

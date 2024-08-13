@@ -1,0 +1,34 @@
+.button-border:hover {
+    scale: 1.02;
+}
+.button-border-gradient {
+  border: 1px solid transparent;
+  border-radius: 24px;
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.95),
+      rgba(255, 255, 255, 0.95)
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 60, 255, 0.8),
+      rgba(236, 180, 180, 0.8) 25%,
+      rgba(100, 25, 255, 0.8) 75%,
+      rgba(220, 80, 220, 0.8) 100%
+    );
+}
+
+.button-border-gradient:hover {
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.95)
+    ),
+    linear-gradient(
+      90deg,
+      rgba(100, 25, 255, 0.8) 0%,
+      rgba(255, 60, 255, 0.8) 75%,
+    );
+}

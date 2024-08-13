@@ -6,6 +6,7 @@ import { Theme } from '@radix-ui/themes';
 import { useRouter } from "next/router";
 import { usePathname } from "next/navigation";
 import { TopNav } from "./layout/TopNav";
+import ReactQueryProvider from "@/components/provider/QueryProvider";
 // import { WindowTitleBar } from '@/components/titlebar/WindowTitleBar';
 
 const inter = Inter({ subsets: ["latin"] });
@@ -25,10 +26,13 @@ export default function RootLayout({
       <body className={inter.className}>
         {/* <WindowTitleBar/> */}
         <Theme appearance="light">
-          <TopNav />
-          <main className=" absolute w-full top-[60px]" >
-            {children}
-          </main>
+          <ReactQueryProvider >
+            <TopNav />
+            <main className=" absolute w-full top-[60px]" >
+              {children}
+            </main>
+          </ReactQueryProvider>
+
         </Theme>
       </body>
     </html>
@@ -40,7 +44,7 @@ export default function RootLayout({
 export function Footbar() {
   return (
     <>
-    <div id="Footbar" className="fixed bottom-0 bg-white z-30 flex items-center w-full border-b h-[36px]">
+      <div id="Footbar" className="fixed bottom-0 bg-white z-30 flex items-center w-full border-b h-[36px]">
         <div>hello</div>
         <div>hello</div>
       </div>

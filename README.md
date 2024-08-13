@@ -2,7 +2,6 @@
 
 这是一个模板, 集合了Tauri, Axum, Next三个框架。
 
-## Quaick Sstart
 
 ### Prerequist
 - rust <= 1.79
@@ -45,6 +44,32 @@ cargo watch -q -c -w src-axum/src -w configuration -x "run -p src-axum"
 cargo watch -q -c -w src-axum/tests -w configuration -x "test -p src-axum test_config -- --nocapture"
 
 ### Contribute
+
+
+#### Run only with nextjs
+``` bash
+pnpm run next-dev
+```
+
+#### Run with nextjs and tauri
+``` bash
+pnpm run tauri
+```
+
+### run only with axum
+``` bash
+# 单独运行
+cargo run
+
+# 测试
+cargo watch -q -c -w src-axum/src -w configuration -x "run -p src-axum"
+cargo watch -q -c -w src-axum/tests -w configuration -x "test -p src-axum test_config -- --nocapture"
+
+```
+
+
+
+
 
 
 
